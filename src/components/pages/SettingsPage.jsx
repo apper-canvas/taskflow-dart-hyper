@@ -11,17 +11,17 @@ export default function SettingsPage() {
   const [profileData, setProfileData] = useState({
     displayName: 'TaskFlow User',
     email: 'user@taskflow.pro'
-  });
+});
   const [preferencesData, setPreferencesData] = useState({
+    theme: 'light',
     notifications: true,
-    theme: 'light'
+    autoSave: true
   });
   const [privacyData, setPrivacyData] = useState({
     dataSharing: false,
     analytics: true
   });
-
-  const handleSave = async () => {
+const handleSave = async () => {
     try {
       setLoading(true);
       
@@ -44,8 +44,6 @@ export default function SettingsPage() {
         <h1 className="text-2xl font-display font-bold text-surface-900 mb-2">Settings</h1>
         <p className="text-surface-600">Manage your TaskFlow Pro preferences</p>
       </div>
-
-      <div className="grid gap-6">
 <div className="grid gap-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <SettingsProfileSection 
@@ -60,7 +58,6 @@ export default function SettingsPage() {
             onChange={setPreferencesData} 
           />
         </motion.div>
-
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
           <SettingsDataPrivacySection 
             data={privacyData} 
@@ -80,8 +77,7 @@ export default function SettingsPage() {
           >
             {loading ? 'Saving...' : 'Save Changes'}
           </Button>
-        </motion.div>
-      </div>
+</motion.div>
       </div>
     </div>
   );
