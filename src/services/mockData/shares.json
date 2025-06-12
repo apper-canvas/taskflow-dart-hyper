@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "projectId": "1",
+    "shareLink": "https://taskflow.pro/shared/abc123def456",
+    "permission": "view",
+    "expiresAt": "2024-04-15T00:00:00Z"
+  },
+  {
+    "id": "2",
+    "projectId": "2",
+    "shareLink": "https://taskflow.pro/shared/xyz789ghi012",
+    "permission": "edit",
+    "expiresAt": null
+  },
+  {
+    "id": "3",
+    "projectId": "3",
+    "shareLink": "https://taskflow.pro/shared/mno345pqr678",
+    "permission": "view",
+    "expiresAt": "2024-03-30T00:00:00Z"
+  }
+]

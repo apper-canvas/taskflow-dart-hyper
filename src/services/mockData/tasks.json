@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "projectId": "1",
+    "title": "Create wireframes for homepage",
+    "description": "Design detailed wireframes for the new homepage layout including header, hero section, and footer",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2024-03-15",
+    "assignedTo": "designer@example.com",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "projectId": "1",
+    "title": "Setup development environment",
+    "description": "Configure local development setup with latest frameworks and tools",
+    "status": "in-progress",
+    "priority": "medium",
+    "dueDate": "2024-03-10",
+    "assignedTo": "dev@example.com",
+    "createdAt": "2024-01-16T09:00:00Z",
+    "updatedAt": "2024-02-01T14:20:00Z"
+  },
+  {
+    "id": "3",
+    "projectId": "1",
+    "title": "Content audit and migration",
+    "description": "Review existing content and migrate relevant sections to new design",
+    "status": "done",
+    "priority": "low",
+    "dueDate": "2024-03-01",
+    "assignedTo": "content@example.com",
+    "createdAt": "2024-01-17T15:45:00Z",
+    "updatedAt": "2024-02-28T16:30:00Z"
+  },
+  {
+    "id": "4",
+    "projectId": "2",
+    "title": "User authentication system",
+    "description": "Implement secure user login and registration functionality",
+    "status": "in-progress",
+    "priority": "high",
+    "dueDate": "2024-03-20",
+    "assignedTo": "backend@example.com",
+    "createdAt": "2024-01-20T11:15:00Z",
+    "updatedAt": "2024-02-15T09:45:00Z"
+  },
+  {
+    "id": "5",
+    "projectId": "2",
+    "title": "UI component library",
+    "description": "Create reusable UI components for consistent design across the app",
+    "status": "todo",
+    "priority": "medium",
+    "dueDate": "2024-03-25",
+    "assignedTo": "frontend@example.com",
+    "createdAt": "2024-01-21T13:20:00Z",
+    "updatedAt": "2024-01-21T13:20:00Z"
+  },
+  {
+    "id": "6",
+    "projectId": "3",
+    "title": "Market research analysis",
+    "description": "Conduct comprehensive market analysis for target audience identification",
+    "status": "done",
+    "priority": "high",
+    "dueDate": "2024-02-20",
+    "assignedTo": "marketing@example.com",
+    "createdAt": "2024-02-01T10:00:00Z",
+    "updatedAt": "2024-02-19T17:00:00Z"
+  },
+  {
+    "id": "7",
+    "projectId": "3",
+    "title": "Social media strategy",
+    "description": "Develop comprehensive social media campaign strategy and content calendar",
+    "status": "in-progress",
+    "priority": "medium",
+    "dueDate": "2024-03-15",
+    "assignedTo": "social@example.com",
+    "createdAt": "2024-02-05T14:30:00Z",
+    "updatedAt": "2024-02-20T11:15:00Z"
+  },
+  {
+    "id": "8",
+    "projectId": "4",
+    "title": "Database schema design",
+    "description": "Design optimized database schema for improved performance",
+    "status": "todo",
+    "priority": "high",
+    "dueDate": "2024-03-30",
+    "assignedTo": "dba@example.com",
+    "createdAt": "2024-02-10T16:50:00Z",
+    "updatedAt": "2024-02-10T16:50:00Z"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "name": "Website Redesign",
+    "description": "Complete redesign of the company website with modern UI/UX principles",
+    "color": "#5B47E0",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "sharedWith": ["user2@example.com", "user3@example.com"],
+    "permissions": {
+      "user2@example.com": "edit",
+      "user3@example.com": "view"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Mobile App Development",
+    "description": "Cross-platform mobile application for iOS and Android",
+    "color": "#FF6B6B",
+    "createdAt": "2024-01-20T14:30:00Z",
+    "sharedWith": ["user4@example.com"],
+    "permissions": {
+      "user4@example.com": "edit"
+    }
+  },
+  {
+    "id": "3",
+    "name": "Marketing Campaign Q1",
+    "description": "Comprehensive marketing strategy and execution for Q1 2024",
+    "color": "#4CAF50",
+    "createdAt": "2024-02-01T09:15:00Z",
+    "sharedWith": [],
+    "permissions": {}
+  },
+  {
+    "id": "4",
+    "name": "Database Migration",
+    "description": "Migrate legacy database to new cloud infrastructure",
+    "color": "#FF9800",
+    "createdAt": "2024-02-10T16:45:00Z",
+    "sharedWith": ["admin@example.com"],
+    "permissions": {
+      "admin@example.com": "edit"
+    }
+  },
+  {
+    "id": "5",
+    "name": "Team Onboarding",
+    "description": "Streamline new employee onboarding process and documentation",
+    "color": "#2196F3",
+    "createdAt": "2024-02-15T11:20:00Z",
+    "sharedWith": [],
+    "permissions": {}
+  }
+]
