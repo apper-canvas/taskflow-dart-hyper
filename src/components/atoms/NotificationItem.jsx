@@ -1,7 +1,8 @@
 import { formatDistanceToNow } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 import ApperIcon from '@/components/ApperIcon';
 
-const NotificationItem = ({ notification, onMarkAsRead }) => {
+const NotificationItem = ({ notification, onMarkAsRead, onNavigate }) => {
   const getNotificationIcon = (type) => {
     switch (type) {
       case 'mention':
@@ -28,9 +29,23 @@ const NotificationItem = ({ notification, onMarkAsRead }) => {
     }
   };
 
+const navigate = useNavigate();
+
   const handleClick = () => {
     if (!notification.read) {
       onMarkAsRead(notification.id);
+    }
+    
+    // Navigate based on notification type
+    if (notification.taskId) {
+      navigate('/tasks');
+    } else if (notification.projectId) {
+      navigate('/projects');
+    }
+    
+    // Close the dropdown
+    if (onNavigate) {
+      onNavigate();
     }
   };
 

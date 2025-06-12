@@ -143,7 +143,7 @@ const NotificationDropdown = ({ isOpen, onToggle, onClose }) => {
               )}
             </div>
 
-            <div className="max-h-96 overflow-y-auto">
+<div className="overflow-y-auto">
               {loading ? (
                 <div className="flex items-center justify-center py-8">
                   <LoadingSpinner size="sm" />
@@ -170,11 +170,12 @@ const NotificationDropdown = ({ isOpen, onToggle, onClose }) => {
                 </div>
               ) : (
                 <div className="py-2">
-                  {notifications.map((notification) => (
+{notifications.map((notification) => (
                     <NotificationItem
                       key={notification.id}
                       notification={notification}
                       onMarkAsRead={handleMarkAsRead}
+                      onNavigate={onClose}
                     />
                   ))}
                 </div>
