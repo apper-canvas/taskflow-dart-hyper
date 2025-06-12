@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import ApperIcon from '../components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
-export default function NotFound() {
+export default function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
@@ -20,14 +21,9 @@ export default function NotFound() {
         </motion.div>
         <h1 className="mt-4 text-2xl font-display font-bold text-surface-900">Page Not Found</h1>
         <p className="mt-2 text-surface-600">The page you're looking for doesn't exist.</p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => navigate('/projects')}
-          className="mt-6 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-        >
+        <Button onClick={() => navigate('/projects')} className="mt-6 px-6 py-2">
           Go to Projects
-        </motion.button>
+        </Button>
       </motion.div>
     </div>
   );

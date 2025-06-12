@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ApperIcon from './components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
 import { routes } from './config/routes';
 
 export default function Layout() {
