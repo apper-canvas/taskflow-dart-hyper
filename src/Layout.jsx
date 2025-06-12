@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
 import { routes } from '@/config/routes';
+import NotificationDropdown from '@/components/organisms/NotificationDropdown';
+
 export default function Layout() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
 
   const navigationItems = [
     routes.projects,
@@ -14,10 +17,12 @@ export default function Layout() {
   ];
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
+  const toggleNotifications = () => setNotificationsOpen(!notificationsOpen);
+  
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-background">
       {/* Header */}
-      <header className="flex-shrink-0 h-16 bg-white border-b border-surface-200 z-40">
+<header className="flex-shrink-0 h-16 bg-white border-b border-surface-200 z-40">
         <div className="flex items-center justify-between h-full px-4 lg:px-6">
           <div className="flex items-center space-x-4">
             <button
@@ -34,6 +39,13 @@ export default function Layout() {
                 TaskFlow Pro
               </h1>
             </div>
+          </div>
+          <div className="relative">
+            <NotificationDropdown 
+              isOpen={notificationsOpen}
+              onToggle={toggleNotifications}
+              onClose={() => setNotificationsOpen(false)}
+            />
           </div>
         </div>
       </header>

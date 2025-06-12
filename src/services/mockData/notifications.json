@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "type": "mention",
+    "message": "John Doe mentioned you in \"Website Redesign\"",
+    "details": "Can you review the latest mockups when you have a chance?",
+    "read": false,
+    "createdAt": "2024-01-15T14:30:00Z",
+    "readAt": null,
+    "relatedId": "project-123",
+    "relatedType": "project"
+  },
+  {
+    "id": 2,
+    "type": "due_date",
+    "message": "Task \"Complete homepage wireframes\" is due tomorrow",
+    "details": "Priority: High • Project: Website Redesign",
+    "read": false,
+    "createdAt": "2024-01-15T12:00:00Z",
+    "readAt": null,
+    "relatedId": "task-456",
+    "relatedType": "task"
+  },
+  {
+    "id": 3,
+    "type": "assignment",
+    "message": "You were assigned to \"Mobile App Testing\"",
+    "details": "Assigned by Sarah Chen • Due: Jan 20, 2024",
+    "read": true,
+    "createdAt": "2024-01-14T16:45:00Z",
+    "readAt": "2024-01-14T17:30:00Z",
+    "relatedId": "task-789",
+    "relatedType": "task"
+  },
+  {
+    "id": 4,
+    "type": "due_date",
+    "message": "3 tasks are overdue in \"E-commerce Platform\"",
+    "details": "Database optimization, Payment integration, Security audit",
+    "read": false,
+    "createdAt": "2024-01-14T09:00:00Z",
+    "readAt": null,
+    "relatedId": "project-456",
+    "relatedType": "project"
+  },
+  {
+    "id": 5,
+    "type": "mention",
+    "message": "Lisa Wang mentioned you in \"Bug Fixes\"",
+    "details": "Found the issue you were tracking. Ready for code review.",
+    "read": true,
+    "createdAt": "2024-01-13T15:20:00Z",
+    "readAt": "2024-01-13T15:25:00Z",
+    "relatedId": "task-321",
+    "relatedType": "task"
+  },
+  {
+    "id": 6,
+    "type": "assignment",
+    "message": "New task assigned: \"Update documentation\"",
+    "details": "Assigned by Mike Johnson • Priority: Medium",
+    "read": false,
+    "createdAt": "2024-01-13T11:30:00Z",
+    "readAt": null,
+    "relatedId": "task-654",
+    "relatedType": "task"
+  },
+  {
+    "id": 7,
+    "type": "due_date",
+    "message": "Task \"Client presentation prep\" is due in 2 hours",
+    "details": "Priority: High • Project: Q1 Strategy",
+    "read": true,
+    "createdAt": "2024-01-12T14:00:00Z",
+    "readAt": "2024-01-12T14:05:00Z",
+    "relatedId": "task-987",
+    "relatedType": "task"
+  },
+  {
+    "id": 8,
+    "type": "mention",
+    "message": "Alex Rivera mentioned you in \"Team Standup Notes\"",
+    "details": "Can you provide an update on the API integration?",
+    "read": false,
+    "createdAt": "2024-01-12T10:15:00Z",
+    "readAt": null,
+    "relatedId": "project-789",
+    "relatedType": "project"
+  }
+]
