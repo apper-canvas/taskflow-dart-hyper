@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { Provider } from 'react-redux';
+import { store } from '@/store/store';
 import { routes, routeArray } from '@/config/routes';
 import Layout from '@/Layout';
 function App() {
