@@ -60,8 +60,8 @@ const taskService = {
   },
 
   async updateStatus(id, status) {
-    return this.update(id, { status });
+return this.update(id, { status });
   }
 };
 
-export default taskService;
+export { taskService };
