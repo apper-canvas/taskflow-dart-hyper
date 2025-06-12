@@ -56,4 +56,6 @@ const shareService = {
   }
 };
 
+// Export both as named and default for maximum compatibility
+export { shareService };
 export default shareService;
