@@ -15,8 +15,8 @@ const ProjectSidebar = ({
   error, 
   onRetry 
 }) => {
-  if (loading) {
-    return <LoadingSpinner skeletonType="fullPage" className="w-full bg-white border-r border-surface-200" />;
+if (loading) {
+    return <div className="w-80 bg-white border-r border-surface-200 flex-shrink-0"><LoadingSpinner skeletonType="fullPage" className="w-full" /></div>;
   }
 
   if (error) {

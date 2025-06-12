@@ -176,19 +176,21 @@ export default function ProjectsPage() {
   };
 
 
-  return (
-    <div className="h-full flex max-w-full overflow-hidden">
-      <ProjectSidebar
-        projects={projects}
-        selectedProjectId={selectedProject?.id}
-        onSelectProject={setSelectedProject}
-        onCreateProject={() => setShowProjectModal(true)}
-        loading={loadingProjects}
-        error={errorProjects}
-        onRetry={loadProjects}
-      />
+return (
+    <div className="h-full flex max-w-full">
+      <div className="flex-shrink-0">
+        <ProjectSidebar
+          projects={projects}
+          selectedProjectId={selectedProject?.id}
+          onSelectProject={setSelectedProject}
+          onCreateProject={() => setShowProjectModal(true)}
+          loading={loadingProjects}
+          error={errorProjects}
+          onRetry={loadProjects}
+        />
+      </div>
 
-<div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {selectedProject ? (
           <>
             <ProjectDetailsHeader
@@ -201,7 +203,7 @@ export default function ProjectsPage() {
               onShareProject={handleShareProject}
               onDeleteProject={handleDeleteProject}
             />
-            <div className="flex-1 overflow-auto">
+            <div className="flex-1 overflow-auto px-6 pb-6">
               <ProjectKanbanBoard
                 tasks={tasks}
                 loading={loadingTasks}
@@ -209,13 +211,13 @@ export default function ProjectsPage() {
                 onRetry={() => loadTasks(selectedProject.id)}
                 onUpdateTaskStatus={handleUpdateTaskStatus}
                 onEditTask={handleEditTask}
-onDeleteTask={handleDeleteTask}
+                onDeleteTask={handleDeleteTask}
               />
             </div>
           </>
         ) : (
-          <div className="h-full flex items-center justify-center">
-            <div className="text-center">
+          <div className="h-full flex items-center justify-center px-6">
+            <div className="text-center max-w-md">
               <ApperIcon name="MousePointer" className="w-12 h-12 text-surface-300 mx-auto mb-4" />
               <p className="text-surface-600 mb-6">Select a project to view tasks</p>
               <Button 
