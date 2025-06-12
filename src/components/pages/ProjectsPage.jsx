@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 import ProjectSidebar from '@/components/organisms/ProjectSidebar';
 import ProjectDetailsHeader from '@/components/organisms/ProjectDetailsHeader';
 import ProjectKanbanBoard from '@/components/organisms/ProjectKanbanBoard';
