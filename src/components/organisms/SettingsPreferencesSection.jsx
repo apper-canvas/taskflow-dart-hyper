@@ -8,7 +8,7 @@ export default function SettingsPreferencesSection() {
   const dispatch = useDispatch();
   const settings = useSelector(state => state.settings);
 
-  const handleTaskViewChange = (view) => {
+const handleTaskViewChange = (view) => {
     dispatch(updateTaskView(view));
   };
 
