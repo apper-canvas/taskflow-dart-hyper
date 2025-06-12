@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import ApperIcon from '@/components/ApperIcon';
 
 const NotificationItem = ({ notification, onMarkAsRead, onNavigate }) => {
+  const navigate = useNavigate();
+  
   const getNotificationIcon = (type) => {
     switch (type) {
       case 'mention':
@@ -28,8 +30,6 @@ const NotificationItem = ({ notification, onMarkAsRead, onNavigate }) => {
         return 'text-surface-600';
     }
   };
-
-const navigate = useNavigate();
 
   const handleClick = () => {
     if (!notification.read) {

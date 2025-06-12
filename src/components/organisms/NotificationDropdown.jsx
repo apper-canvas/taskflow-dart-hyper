@@ -143,7 +143,7 @@ const NotificationDropdown = ({ isOpen, onToggle, onClose }) => {
               )}
             </div>
 
-<div className="overflow-y-auto">
+<div className="max-h-96 overflow-y-auto">
               {loading ? (
                 <div className="flex items-center justify-center py-8">
                   <LoadingSpinner size="sm" />
