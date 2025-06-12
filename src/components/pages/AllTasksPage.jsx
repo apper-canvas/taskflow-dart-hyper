@@ -9,6 +9,7 @@ import Modal from '@/components/molecules/Modal';
 import TaskForm from '@/components/organisms/TaskForm';
 import AllTasksFilterBar from '@/components/organisms/AllTasksFilterBar';
 import ProjectKanbanBoard from '@/components/organisms/ProjectKanbanBoard';
+import CalendarView from '@/components/organisms/CalendarView';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import ErrorMessage from '@/components/atoms/ErrorMessage';
 import EmptyState from '@/components/atoms/EmptyState';
@@ -183,12 +184,16 @@ return (
             />
           )}
 
-          {taskViewPreference === 'calendar' && (
-            <EmptyState
-              icon="Calendar"
-              title="Calendar View"
-              description="Calendar view is coming soon"
-              className="py-12"
+{taskViewPreference === 'calendar' && (
+            <CalendarView
+              tasks={filteredTasks}
+              projects={projects}
+              onEditTask={handleEditTask}
+              onDeleteTask={handleDeleteTask}
+              onStatusChange={handleStatusChange}
+              onUpdateTask={handleUpdateTask}
+              getProjectName={getProjectName}
+              getProjectColor={getProjectColor}
             />
           )}
         </>
