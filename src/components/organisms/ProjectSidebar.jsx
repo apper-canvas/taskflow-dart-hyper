@@ -30,14 +30,16 @@ const ProjectSidebar = ({
   return (
     <div className="w-80 bg-white border-r border-surface-200 flex flex-col overflow-hidden">
       <div className="p-6 border-b border-surface-200">
-        <div className="flex items-center justify-between mb-4">
+<div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-display font-semibold text-surface-900">Projects</h2>
           <Button
             onClick={onCreateProject}
-            size="icon"
+            size="sm"
             icon={ApperIcon}
             iconProps={{ name: "Plus", size: 16 }}
-          />
+          >
+            Create Project
+          </Button>
         </div>
       </div>
 
