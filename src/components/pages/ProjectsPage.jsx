@@ -188,7 +188,7 @@ export default function ProjectsPage() {
         onRetry={loadProjects}
       />
 
-      <div className="flex-1 overflow-hidden">
+<div className="flex-1 flex flex-col overflow-hidden">
         {selectedProject ? (
           <>
             <ProjectDetailsHeader
@@ -201,17 +201,19 @@ export default function ProjectsPage() {
               onShareProject={handleShareProject}
               onDeleteProject={handleDeleteProject}
             />
-            <ProjectKanbanBoard
-              tasks={tasks}
-              loading={loadingTasks}
-              error={errorTasks}
-              onRetry={() => loadTasks(selectedProject.id)}
-              onUpdateTaskStatus={handleUpdateTaskStatus}
-              onEditTask={handleEditTask}
-              onDeleteTask={handleDeleteTask}
-            />
+            <div className="flex-1 overflow-auto">
+              <ProjectKanbanBoard
+                tasks={tasks}
+                loading={loadingTasks}
+                error={errorTasks}
+                onRetry={() => loadTasks(selectedProject.id)}
+                onUpdateTaskStatus={handleUpdateTaskStatus}
+                onEditTask={handleEditTask}
+onDeleteTask={handleDeleteTask}
+              />
+            </div>
           </>
-) : (
+        ) : (
           <div className="h-full flex items-center justify-center">
             <div className="text-center">
               <ApperIcon name="MousePointer" className="w-12 h-12 text-surface-300 mx-auto mb-4" />

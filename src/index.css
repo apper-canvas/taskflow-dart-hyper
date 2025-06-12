@@ -25,10 +25,6 @@ body::-webkit-scrollbar {
 }
 
 /* Main content areas must allow scroll */
-.main-content {
-  overflow-y: auto;
-  height: 100vh;
-}
 
 @layer utilities {
   /* Only use scrollbar-hide for specific UI elements, never main content */

@@ -94,7 +94,7 @@ export default function Layout() {
         </aside>
 
 {/* Main Content */}
-        <main className="flex-1">
+        <main className="flex-1 overflow-hidden">
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0, x: 20 }}

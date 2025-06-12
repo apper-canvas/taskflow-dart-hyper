@@ -131,49 +131,52 @@ export default function AllTasksPage() {
   }
 
 return (
-    <div className="p-6 max-w-full overflow-hidden">
-      <div className="mb-6">
-        <h1 className="text-2xl font-display font-bold text-surface-900 mb-2">All Tasks</h1>
-        <p className="text-surface-600">View and manage tasks across all projects</p>
+<div className="h-full flex flex-col overflow-hidden">
+      <div className="p-6 pb-0">
+        <div className="mb-6">
+          <h1 className="text-2xl font-display font-bold text-surface-900 mb-2">All Tasks</h1>
+          <p className="text-surface-600">View and manage tasks across all projects</p>
+        </div>
+
+        <AllTasksFilterBar 
+          filters={filters} 
+          onFilterChange={handleFilterChange} 
+          projects={projects} 
+          taskCount={filteredTasks.length} 
+        />
       </div>
 
-      <AllTasksFilterBar 
-        filters={filters} 
-        onFilterChange={handleFilterChange} 
-        projects={projects} 
-        taskCount={filteredTasks.length} 
-      />
+      <div className="flex-1 overflow-auto p-6 pt-4">
+        {filteredTasks.length === 0 ? (
+          <EmptyState
+            icon="Search"
+            title="No tasks found"
+            description="Try adjusting your filters or create a new task"
+            className="py-12"
+          />
+        ) : (
+          <>
+            {taskViewPreference === 'list' && (
+              <div className="space-y-4">
+                <AnimatePresence>
+                  {filteredTasks.map((task, index) => (
+                    <TaskCard
+                      key={task.id}
+                      task={task}
+                      index={index}
+                      onEdit={handleEditTask}
+                      onDelete={handleDeleteTask}
+                      onStatusChange={handleStatusChange}
+                      projectName={getProjectName(task.projectId)}
+                      projectColor={getProjectColor(task.projectId)}
+                    />
+                  ))}
+</AnimatePresence>
+              </div>
+            )}
 
-      {filteredTasks.length === 0 ? (
-        <EmptyState
-          icon="Search"
-          title="No tasks found"
-          description="Try adjusting your filters or create a new task"
-          className="py-12"
-        />
-      ) : (
-        <>
-          {taskViewPreference === 'list' && (
-            <div className="space-y-4 max-w-full overflow-hidden">
-              <AnimatePresence>
-                {filteredTasks.map((task, index) => (
-                  <TaskCard
-                    key={task.id}
-                    task={task}
-                    index={index}
-                    onEdit={handleEditTask}
-                    onDelete={handleDeleteTask}
-                    onStatusChange={handleStatusChange}
-                    projectName={getProjectName(task.projectId)}
-                    projectColor={getProjectColor(task.projectId)}
-                  />
-                ))}
-              </AnimatePresence>
-            </div>
-          )}
-
-          {taskViewPreference === 'kanban' && (
-            <ProjectKanbanBoard
+            {taskViewPreference === 'kanban' && (
+              <ProjectKanbanBoard
               tasks={filteredTasks}
               loading={loading}
               error={error}
@@ -182,23 +185,23 @@ return (
               onTaskDelete={handleDeleteTask}
               projects={projects}
             />
-          )}
+)}
 
-{taskViewPreference === 'calendar' && (
-            <CalendarView
-              tasks={filteredTasks}
-              projects={projects}
-              onEditTask={handleEditTask}
-              onDeleteTask={handleDeleteTask}
-              onStatusChange={handleStatusChange}
-              onUpdateTask={handleUpdateTask}
-              getProjectName={getProjectName}
-              getProjectColor={getProjectColor}
-            />
-          )}
-        </>
-      )}
-
+            {taskViewPreference === 'calendar' && (
+              <CalendarView
+                tasks={filteredTasks}
+                projects={projects}
+                onEditTask={handleEditTask}
+                onDeleteTask={handleDeleteTask}
+                onStatusChange={handleStatusChange}
+                onUpdateTask={handleUpdateTask}
+                getProjectName={getProjectName}
+                getProjectColor={getProjectColor}
+              />
+            )}
+          </>
+        )}
+      </div>
       {showTaskModal && (
         <Modal
           title={selectedTask ? 'Edit Task' : 'New Task'}
