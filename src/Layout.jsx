@@ -94,14 +94,14 @@ export default function Layout() {
         </aside>
 
 {/* Main Content */}
-        <main className="flex-1 overflow-hidden">
+<main className="flex-1 flex flex-col">
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.2 }}
-            className="h-full"
+            className="flex-1 flex flex-col overflow-y-auto"
           >
             <Outlet />
           </motion.div>
