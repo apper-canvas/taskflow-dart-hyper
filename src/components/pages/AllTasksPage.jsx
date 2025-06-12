@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { format } from 'date-fns'; // Still needed for TaskCard
@@ -7,6 +8,7 @@ import TaskCard from '@/components/molecules/TaskCard';
 import Modal from '@/components/molecules/Modal';
 import TaskForm from '@/components/organisms/TaskForm';
 import AllTasksFilterBar from '@/components/organisms/AllTasksFilterBar';
+import ProjectKanbanBoard from '@/components/organisms/ProjectKanbanBoard';
 import LoadingSpinner from '@/components/atoms/LoadingSpinner';
 import ErrorMessage from '@/components/atoms/ErrorMessage';
 import EmptyState from '@/components/atoms/EmptyState';
@@ -24,7 +26,9 @@ export default function AllTasksPage() {
   });
   const [showTaskModal, setShowTaskModal] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
-
+  
+  // Get task view preference from Redux store
+  const taskViewPreference = useSelector(state => state.settings?.taskView || 'list');
   useEffect(() => {
     loadData();
   }, []);
@@ -125,7 +129,7 @@ export default function AllTasksPage() {
     return <ErrorMessage title="Error Loading Tasks" message={error} onRetry={loadData} />;
   }
 
-  return (
+return (
     <div className="p-6 max-w-full overflow-hidden">
       <div className="mb-6">
         <h1 className="text-2xl font-display font-bold text-surface-900 mb-2">All Tasks</h1>
@@ -147,22 +151,47 @@ export default function AllTasksPage() {
           className="py-12"
         />
       ) : (
-        <div className="space-y-4 max-w-full overflow-hidden">
-          <AnimatePresence>
-            {filteredTasks.map((task, index) => (
-              <TaskCard
-                key={task.id}
-                task={task}
-                index={index}
-                onEdit={handleEditTask}
-                onDelete={handleDeleteTask}
-                onStatusChange={handleStatusChange}
-                projectName={getProjectName(task.projectId)}
-                projectColor={getProjectColor(task.projectId)}
-              />
-            ))}
-          </AnimatePresence>
-        </div>
+        <>
+          {taskViewPreference === 'list' && (
+            <div className="space-y-4 max-w-full overflow-hidden">
+              <AnimatePresence>
+                {filteredTasks.map((task, index) => (
+                  <TaskCard
+                    key={task.id}
+                    task={task}
+                    index={index}
+                    onEdit={handleEditTask}
+                    onDelete={handleDeleteTask}
+                    onStatusChange={handleStatusChange}
+                    projectName={getProjectName(task.projectId)}
+                    projectColor={getProjectColor(task.projectId)}
+                  />
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
+
+          {taskViewPreference === 'kanban' && (
+            <ProjectKanbanBoard
+              tasks={filteredTasks}
+              loading={loading}
+              error={error}
+              onTaskStatusChange={handleStatusChange}
+              onTaskEdit={handleEditTask}
+              onTaskDelete={handleDeleteTask}
+              projects={projects}
+            />
+          )}
+
+          {taskViewPreference === 'calendar' && (
+            <EmptyState
+              icon="Calendar"
+              title="Calendar View"
+              description="Calendar view is coming soon"
+              className="py-12"
+            />
+          )}
+        </>
       )}
 
       {showTaskModal && (
