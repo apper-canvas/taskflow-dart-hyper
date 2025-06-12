@@ -7,12 +7,18 @@
 
 /* Ensure scrollbars are visible */
 body {
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   margin: 0;
   min-height: 100vh;
+  /* Hide scrollbar for webkit browsers */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
 
+body::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
 /* Prevent horizontal overflow */
 * {
   max-width: 100%;
