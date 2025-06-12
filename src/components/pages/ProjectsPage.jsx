@@ -210,11 +210,19 @@ export default function ProjectsPage() {
               onDeleteTask={handleDeleteTask}
             />
           </>
-        ) : (
+) : (
           <div className="h-full flex items-center justify-center">
             <div className="text-center">
               <ApperIcon name="MousePointer" className="w-12 h-12 text-surface-300 mx-auto mb-4" />
-              <p className="text-surface-600">Select a project to view tasks</p>
+              <p className="text-surface-600 mb-6">Select a project to view tasks</p>
+              <Button 
+                variant="primary" 
+                onClick={() => setShowProjectModal(true)}
+                className="inline-flex items-center gap-2"
+              >
+                <ApperIcon name="Plus" className="w-4 h-4" />
+                Create New Project
+              </Button>
             </div>
           </div>
         )}
