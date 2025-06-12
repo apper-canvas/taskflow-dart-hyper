@@ -16,19 +16,19 @@ const ProjectSidebar = ({
   onRetry 
 }) => {
 if (loading) {
-    return <div className="w-80 bg-white border-r border-surface-200 flex-shrink-0"><LoadingSpinner skeletonType="fullPage" className="w-full" /></div>;
+return <div className="w-96 bg-white border-r border-surface-200 flex-shrink-0"><LoadingSpinner skeletonType="fullPage" className="w-full" /></div>;
   }
 
   if (error) {
     return (
-      <div className="w-80 bg-white border-r border-surface-200 flex flex-col p-6">
+<div className="w-96 bg-white border-r border-surface-200 flex flex-col p-6">
         <ErrorMessage title="Error Loading Projects" message={error} onRetry={onRetry} />
       </div>
     );
   }
 
   return (
-    <div className="w-80 bg-white border-r border-surface-200 flex flex-col overflow-hidden">
+<div className="w-96 bg-white border-r border-surface-200 flex flex-col overflow-hidden">
       <div className="p-6 border-b border-surface-200">
 <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-display font-semibold text-surface-900">Projects</h2>
@@ -43,7 +43,7 @@ if (loading) {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-2">
+<div className="flex-1 overflow-y-auto p-6 space-y-3">
         {projects.length === 0 ? (
           <EmptyState
             icon="FolderOpen"
