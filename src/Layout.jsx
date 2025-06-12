@@ -2,11 +2,10 @@ import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ApperIcon from '@/components/ApperIcon';
-import { routes } from './config/routes';
-
+import { routes } from '@/config/routes';
 export default function Layout() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigationItems = [
     routes.projects,
@@ -15,7 +14,6 @@ export default function Layout() {
   ];
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
-
   return (
     <div className="h-screen flex flex-col overflow-hidden bg-background">
       {/* Header */}
