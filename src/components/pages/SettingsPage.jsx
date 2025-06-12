@@ -38,8 +38,8 @@ const handleSave = async () => {
       setLoading(false);
     }
   };
-  return (
-    <div className="p-6 max-w-4xl mx-auto">
+return (
+    <div className="p-6 w-full">
       <div className="mb-6">
         <h1 className="text-2xl font-display font-bold text-surface-900 mb-2">Settings</h1>
         <p className="text-surface-600">Manage your TaskFlow Pro preferences</p>
